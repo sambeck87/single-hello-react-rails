@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Greeting from './Greeting';
 import { Provider } from 'react-redux';
 import store from '../store/index';
@@ -6,9 +7,11 @@ import store from '../store/index';
 function App() {
   return (
     <Provider store={store}>
-      <Greeting />
+      <BrowserRouter>
+        <Route exact path="/" component={Greeting} />
+      </BrowserRouter>
     </Provider>
   );
 }
 
-export default App
+export default App;
